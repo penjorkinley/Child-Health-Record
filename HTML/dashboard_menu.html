@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard/Menu</title>
+    <link rel="stylesheet" href="/CSS/menu.css">
+</head>
+
+<body onload="initClock()">
+    <div class="header">
+        <div class="date_header">
+            <div class="date">
+                Date:&nbsp;
+                <span id="dayname">Day</span>,&nbsp;
+                <span id="daynum">00</span>
+                <span id="month">Month</span>,&nbsp;
+                <span id="year">Year</span>
+            </div>
+
+            <div class="time">
+                Time:&nbsp;
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            function updateClock() {
+
+                var now = new Date();
+                var dname = now.getDay(),
+                    mo = now.getMonth(),
+                    dnum = now.getDate(),
+                    yr = now.getFullYear(),
+                    hou = now.getHours(),
+                    min = now.getMinutes(),
+                    sec = now.getSeconds(),
+                    pe = "AM";
+
+                if (hou == 0) {
+                    hou = 12;
+                }
+                if (hou > 12) {
+                    hou = hou - 12;
+                    pe = "PM";
+                }
+
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+                var values = [week[dname], months[mo], dnum, yr, hou, min, sec, pe];
+
+                for (var i = 0; i < ids.length; i++) {
+                    document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+                }
+            }
+
+            function initClock() {
+                updateClock();
+                window.setInterval("updateClock()", 1)
+            }
+        </script>
+        <hr id="hr1">
+        <div class="nav_bar">
+
+            <div class="logo">
+                <a href="/Home_page.html" class="logo_link"> <img src="/Images/Logo.png" id="logo"></a>
+            </div>
+
+            <div class="nav_items">
+                <ul class="items">
+                    <li><a href="/Home_page.html">Home</a></li>
+                    <li><a href="/HTML/About_us.html">About Us</a></li>
+                    <li><a href="/HTML/Educational_info.html">Educational Information</a></li>
+                    <li><a href="/HTML/contact_us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="logout_button">
+                <a id="logout_button" href="/Home_page.html">Log Out</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="header2">
+
+        <div class="dashboard_header">
+            Dashboard
+        </div>
+
+        <div class="header3">
+            <div class="menu active">
+                <a href="./dashboard_menu.html">Menu</a>
+            </div>
+
+            <div class="parent_info">
+                <a href="/HTML/dashboard_parent_info.html">Parent's Info</a>
+            </div>
+
+            <div class="child_info">
+                <a href="/HTML/dashboard_child_info.html">Child's Info</a>
+            </div>
+
+            <div class="immunization_info">
+                <a href="/HTML/dashboard_immunization_info.html">Immunization Record</a>
+            </div>
+
+            <div class="growth_info">
+                <a href="/HTML/dashboard_growth_info.html">Growth Check-Up Record</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="button1">
+        <div class="p_info">
+            <div class="p_icon">
+                <img src="/icons/parents.png">
+            </div>
+            <div class="parent">
+                <a href="/HTML/dashboard_parent_info.html">Parent's Information</a>
+            </div>
+        </div>
+
+        <div class="c_info">
+            <div class="c_icon">
+                <img src="/icons/child.png">
+            </div>
+            <div class="child">
+                <a href="/HTML/dashboard_child_info.html"> Child's Information</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="button2">
+        <div class="immunization">
+            <div class="immu_icon">
+                <img src="/icons/Immunization.png">
+            </div>
+            <div class="immu">
+                <a href="/HTML/dashboard_immunization_info.html"> Immunization Records</a>
+            </div>
+        </div>
+
+        <div class="growth">
+            <div class="grow">
+                <div class="grow_icon">
+                    <img src="/icons/growth.png">
+                </div>
+                <a href="/HTML/dashboard_growth_info.html">Growth Records</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="links">
+            <hr>
+            <h3>Links</h3>
+            <hr>
+            <div class="link_list">
+                <a href="/Home_page.html">Home</a><br>
+                <a href="/HTML/About_us.html">About Us</a><br>
+                <a href="/HTML/Educational_info.html">Educational Information</a><br>
+                <a href="/HTML/contact_us.html">Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="timing">
+            <hr>
+            <h3>Timing</h3>
+            <hr>
+            Summer &#40 Mar to Oct &#41 &#58 <br>
+            9 &#58 00 AM &#45 5 &#58 00 PM <br><br>
+            Winter &#40 Nov to Feb &#41 &#58<br>
+            9 &#58 00 AM &#45 4 &#58 00 PM <br><br>
+            Office Days &#58<br>
+            Monday to Friday &#58 Open<br><br>
+
+
+
+        </div>
+        <div class="contact_us">
+            <hr>
+            <h3>Contact Us</h3>
+            <hr>
+            Email Address<br><br>
+            sample123@gmail.com <br><br>
+            Contact Us &#58
+            &#43 975-2-328095,<br>
+            32184, 32232
+
+        </div>
+
+    </div>
+    </div>
+</body>
+
+</html>

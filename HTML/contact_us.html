@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/CSS/contact_us.css">
+</head>
+
+<body onload="initClock()">
+    <div class="header">
+        <div class="date_header">
+            <div class="date">
+                Date:&nbsp;
+                <span id="dayname">Day</span>,&nbsp;
+                <span id="daynum">00</span>
+                <span id="month">Month</span>,&nbsp;
+                <span id="year">Year</span>
+            </div>
+
+            <div class="time">
+                Time:&nbsp;
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            function updateClock() {
+
+                var now = new Date();
+                var dname = now.getDay(),
+                    mo = now.getMonth(),
+                    dnum = now.getDate(),
+                    yr = now.getFullYear(),
+                    hou = now.getHours(),
+                    min = now.getMinutes(),
+                    sec = now.getSeconds(),
+                    pe = "AM";
+
+                if (hou == 0) {
+                    hou = 12;
+                }
+                if (hou > 12) {
+                    hou = hou - 12;
+                    pe = "PM";
+                }
+
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+                var values = [week[dname], months[mo], dnum, yr, hou, min, sec, pe];
+
+                for (var i = 0; i < ids.length; i++) {
+                    document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+                }
+            }
+
+            function initClock() {
+                updateClock();
+                window.setInterval("updateClock()", 1)
+            }
+        </script>
+
+        <hr id="hr1">
+        <div class="nav_bar">
+
+            <div class="logo">
+                <a href="/Home_page.html" class="logo_link"> <img src="/Images/Logo.png" id="logo"></a>
+            </div>
+
+            <div class="nav_items">
+                <ul class="items">
+                    <li><a href="/Home_page.html">Home</a></li>
+                    <li><a href="/HTML/About_us.html">About Us</a></li>
+                    <li><a href="/HTML/Educational_info.html">Educational Information</a></li>
+                    <li><a href="/HTML/contact_us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="nav_button">
+                <ul class="button1">
+                    <li><a id="login_button" href="/HTML/login_page.html">Login</a></li>
+                    <li><a id="signup_button" href="/HTML/signup.html"> Sign Up</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="header2">
+
+        <div class="c_us_header">
+            Contact Us
+        </div>
+
+        <div class="header3">
+
+            <div class="home">
+                <div class="home_img">
+                    <img src="\icons\home.png">
+                </div>
+                <div class="home_link">
+                    <a href="/Home_page.html"> Home</a>
+                </div>
+            </div>
+
+
+            <div class="con_us">
+                <div class="contact_us_img">
+                    <img src="/icons/double_ arrow.png">
+                </div>
+
+                <div class="contact_us_link">
+                    <a href="contact_us.html">Contact Us</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="content">
+        <div class="content1">
+            <div class="location">
+                <h2>Location</h2>
+                <p>Gyaltsuen Jetsun Pema Wangchuck</p>
+                <p>Mother and Child Hospital</p>
+
+            </div>
+            <div class="contact_no">
+                <h2>Contact No</h2>
+                <p>&#43 975-2-328095,</p>
+                <p>32184, 32232</p>
+
+            </div>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.202709208929!2d89.63391501514516!3d27.
+                46294788289369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e195b9f6d57b83%3A0xb3d08558d288cde8!
+                2sGyaltsuen%20Jetsun%20Pema%20Wangchuck%20Mother%20and%20Child%20Hospital!5e0!3m2!1sen!2sbt!4v1651265146501!5m2!1sen!2sbt"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </div>
+
+        <div class="content2">
+            <div class="address">
+                <h2>Address</h2>
+                <p> FJ7P+5CH, Thimphu</p>
+            </div>
+
+            <div class="email_address">
+                <h2>Email Address</h2>
+                <p>sample123@gmail.com</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="links">
+                <hr>
+                <h3>Links</h3>
+                <hr>
+                <div class="link_list">
+                    <a href="/Home_page.html">Home</a><br>
+                    <a href="/HTML/About_us.html">About Us</a><br>
+                    <a href="/HTML/Educational_info.html">Educational Information</a><br>
+                    <a href="/HTML/contact_us.html">Contact Us</a>
+                </div>
+
+            </div>
+
+            <div class="timing">
+                <hr>
+                <h3>Timing</h3>
+                <hr>
+                Summer &#40 Mar to Oct &#41 &#58 <br>
+                9 &#58 00 AM &#45 5 &#58 00 PM <br><br>
+                Winter &#40 Nov to Feb &#41 &#58<br>
+                9 &#58 00 AM &#45 4 &#58 00 PM <br><br>
+                Office Days &#58<br>
+                Monday to Friday &#58 Open<br><br>
+
+
+
+            </div>
+            <div class="contact_us">
+                <hr>
+                <h3>Contact Us</h3>
+                <hr>
+                Email Address<br><br>
+                sample123@gmail.com <br><br>
+                Contact Us &#58
+                &#43 975-2-328095,<br>
+                32184, 32232
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

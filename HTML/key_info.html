@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Key Information For Infant And Child Safety</title>
+    <link rel="stylesheet" href="/CSS/key_info.css">
+</head>
+
+<body onload="initClock()">
+    <div class="header">
+        <div class="date_header">
+            <div class="date">
+                Date:&nbsp;
+                <span id="dayname">Day</span>,&nbsp;
+                <span id="daynum">00</span>
+                <span id="month">Month</span>,&nbsp;
+                <span id="year">Year</span>
+            </div>
+
+            <div class="time">
+                Time:&nbsp;
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            function updateClock() {
+
+                var now = new Date();
+                var dname = now.getDay(),
+                    mo = now.getMonth(),
+                    dnum = now.getDate(),
+                    yr = now.getFullYear(),
+                    hou = now.getHours(),
+                    min = now.getMinutes(),
+                    sec = now.getSeconds(),
+                    pe = "AM";
+
+                if (hou == 0) {
+                    hou = 12;
+                }
+                if (hou > 12) {
+                    hou = hou - 12;
+                    pe = "PM";
+                }
+
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+                var values = [week[dname], months[mo], dnum, yr, hou, min, sec, pe];
+
+                for (var i = 0; i < ids.length; i++) {
+                    document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+                }
+            }
+
+            function initClock() {
+                updateClock();
+                window.setInterval("updateClock()", 1)
+            }
+        </script>
+
+        <hr id="hr1">
+        <div class="nav_bar">
+
+            <div class="logo">
+                <a href="/Home_page.html" class="logo_link"> <img src="/Images/Logo.png" id="logo"></a>
+            </div>
+
+            <div class="nav_items">
+                <ul class="items">
+                    <li><a href="/Home_page.html">Home</a></li>
+                    <li><a href="/HTML/About_us.html">About Us</a></li>
+                    <li><a href="/HTML/Educational_info.html">Educational Information</a></li>
+                    <li><a href="/HTML/contact_us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="nav_button">
+                <ul class="button1">
+                    <li><a id="login_button" href="/HTML/login_page.html">Login</a></li>
+                    <li><a id="signup_button" href="/HTML/signup.html"> Sign Up</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="header2">
+
+        <div class="e_info">
+            Educational Information
+        </div>
+
+        <div class="header3">
+
+            <div class="home">
+                <div class="home_img">
+                    <img src="\icons\home.png">
+                </div>
+                <div class="home_link">
+                    <a href="/Home_page.html"> Home</a>
+                </div>
+            </div>
+
+
+            <div class="education_info">
+                <div class="education_info_img">
+                    <img src="/icons/double_ arrow.png">
+                </div>
+
+                <div class="education_link">
+                    <a href="/HTML/Educational_info.html">Educational Information</a>
+                </div>
+
+                <div class="arrow_img">
+                    <img src="/icons/double_ arrow.png">
+                </div>
+                <div class="key_information">
+                    <a href="">Key Information For Infant And Child Safety</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="content">
+        <ul>
+            <li id="header">General Advice For All Ages</li><br>
+            <ul id="list">
+                <li>Get all of your baby's immunization at their scheduled times</li>
+                <li>Bring your baby to be weighed and measured monthly for the first year of life</li>
+                <li>From 1 year of age until your child enters school, bring your child every three months to be weighed
+                    and measured, and for necessary vitamin supplementation and immunization</li>
+                <li>If your child does not appear to be developing like other children his/her age, have them seen at
+                    the local health center</li>
+                <li>Use a car seat for your infant or child when possible</li>
+                <li>Infants and children should be in the back seat of a vehicle, and never be allowed to stick their
+                    head
+                    or arms outside a moving vehicle</li>
+                <li>Do not leave your infant or child unattended</li>
+                <li>Do not smoke near your infant or child</li>
+                <br><br>
+            </ul>
+
+            <li id="header">Birth To 5 Months</li><br>
+            <ul id="list">
+                <li>Do not give your baby water, or food before 6 months of age as it increases the risk of diarrhea or
+                    choking</li>
+                <li>Do not cover your baby's face with a blanket to prevent suffocation</li>
+                <li>Do not leave your baby on his/her belly unattended</li>
+                <br><br>
+            </ul>
+
+            <li id="header">6 months to 2 years</li><br>
+            <ul id="list">
+                <li>Do not give a child hard foods or candy, small toys with detachable pieces, or objects smaller than
+                    their fist as
+                    they are choking risks
+                </li>
+                <li>When child starts rolling, crawling or walking, protect them from falling out of bed, down stairs,
+                    out of windows or
+                    off of balconies
+                </li>
+                <li>Keep all medicines, cleaning supplies, pesticides and flammable liquids out of reach of child</li>
+                <li>Cove buckets of water to prevent drowning and keep sharp objects away from child</li>
+                <li>Baby walkers do not prepare/help baby to walk on his/her own and does not strengthen muscles</li>
+                <br><br>
+            </ul>
+
+            <li id="header">2-5 years</li><br>
+            <ul id="list">
+                <li>Do not let child play with matches or around fires or hot liquids</li>
+                <li>Do not allow child to play unsupervised near rivers or roads</li>
+                <li>Do not allow child to play with sharp objects</li>
+                <li>Do not leave the child alone</li>
+            </ul>
+        </ul>
+    </div>
+    <div class="footer">
+        <div class="links">
+            <hr>
+            <h3>Links</h3>
+            <hr>
+            <div class="link_list">
+                <a href="/Home_page.html">Home</a><br>
+                <a href="/HTML/About_us.html">About Us</a><br>
+                <a href="/HTML/Educational_info.html">Educational Information</a><br>
+                <a href="/HTML/contact_us.html">Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="timing">
+            <hr>
+            <h3>Timing</h3>
+            <hr>
+            Summer &#40 Mar to Oct &#41 &#58 <br>
+            9 &#58 00 AM &#45 5 &#58 00 PM <br><br>
+            Winter &#40 Nov to Feb &#41 &#58<br>
+            9 &#58 00 AM &#45 4 &#58 00 PM <br><br>
+            Office Days &#58<br>
+            Monday to Friday &#58 Open<br><br>
+
+
+
+        </div>
+        <div class="contact_us">
+            <hr>
+            <h3>Contact Us</h3>
+            <hr>
+            Email Address<br><br>
+            sample123@gmail.com <br><br>
+            Contact Us &#58
+            &#43 975-2-328095,<br>
+            32184, 32232
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

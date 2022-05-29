@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dental Care For Children</title>
+    <link rel="stylesheet" href="/CSS/dental_care.css">
+</head>
+
+<body onload="initClock()">
+    <div class="header">
+        <div class="date_header">
+            <div class="date">
+                Date:&nbsp;
+                <span id="dayname">Day</span>,&nbsp;
+                <span id="daynum">00</span>
+                <span id="month">Month</span>,&nbsp;
+                <span id="year">Year</span>
+            </div>
+
+            <div class="time">
+                Time:&nbsp;
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            function updateClock() {
+
+                var now = new Date();
+                var dname = now.getDay(),
+                    mo = now.getMonth(),
+                    dnum = now.getDate(),
+                    yr = now.getFullYear(),
+                    hou = now.getHours(),
+                    min = now.getMinutes(),
+                    sec = now.getSeconds(),
+                    pe = "AM";
+
+                if (hou == 0) {
+                    hou = 12;
+                }
+                if (hou > 12) {
+                    hou = hou - 12;
+                    pe = "PM";
+                }
+
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+                var values = [week[dname], months[mo], dnum, yr, hou, min, sec, pe];
+
+                for (var i = 0; i < ids.length; i++) {
+                    document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+                }
+            }
+
+            function initClock() {
+                updateClock();
+                window.setInterval("updateClock()", 1)
+            }
+        </script>
+
+        <hr id="hr1">
+        <div class="nav_bar">
+
+            <div class="logo">
+                <a href="/Home_page.html" class="logo_link"> <img src="/Images/Logo.png" id="logo"></a>
+            </div>
+
+            <div class="nav_items">
+                <ul class="items">
+                    <li><a href="/Home_page.html">Home</a></li>
+                    <li><a href="/HTML/About_us.html">About Us</a></li>
+                    <li><a href="/HTML/Educational_info.html">Educational Information</a></li>
+                    <li><a href="/HTML/contact_us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="nav_button">
+                <ul class="button1">
+                    <li><a id="login_button" href="/HTML/login_page.html">Login</a></li>
+                    <li><a id="signup_button" href="/HTML/signup.html"> Sign Up</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="header2">
+
+        <div class="e_info">
+            Educational Information
+        </div>
+
+        <div class="header3">
+
+            <div class="home">
+                <div class="home_img">
+                    <img src="\icons\home.png">
+                </div>
+                <div class="home_link">
+                    <a href="/Home_page.html"> Home</a>
+                </div>
+            </div>
+
+
+            <div class="education_info">
+                <div class="education_info_img">
+                    <img src="/icons/double_ arrow.png">
+                </div>
+
+                <div class="education_link">
+                    <a href="/HTML/Educational_info.html">Educational Information</a>
+                </div>
+
+                <div class="arrow_img">
+                    <img src="/icons/double_ arrow.png">
+                </div>
+                <div class="key_information">
+                    <a href="">Dental Care For Children</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="content">
+        <ul>
+            <li id="header">Age Infancy to 2 Years old</li><br>
+            <ul id="list">
+                <li>A Baby's first tooth will appear between 6 and 12 months of age</li>
+                <li>Start cleaning your baby's teeth once they appear</li>
+                <li>Initially wipe the tooth/ teeth with a clean cloth wrapped around your finger. A soft infant/child
+                    sized toothbrush
+                    can also be used
+                </li>
+                <li>Clean/brush the teeth twice a day</li>
+                <br><br>
+            </ul>
+
+            <li id="header">Age 2-5 years old</li><br>
+            <ul id="list">
+                <li>Help your child brush their teeth twice a day or after every meal</li>
+                <li>Use a pea-sized amount of toothpaste with fluoride</li>
+                <li>Children should spit out the toothpaste but not rinse after brushing</li>
+                <li>Children should not eat for 30 minutes after brushing</li>
+                <li>After 2 years old, have their teeth checked every 6 months</li>
+                <br><br>
+            </ul>
+
+            <li id="header">Tips For Healthy Teeth</li><br>
+            <ul id="list">
+                <li>Avoid sugar-sweetened foods and drinks between meals</li>
+                <li>Choose healthy snacks such as fruits, vegetables, yogurt, or cheese</li>
+                <li>Sweet drinks including juice, should never be put in a bottle</li>
+                <li>Do not give a child a bottle or sippy cup when they go to sleep</li>
+                <li>If the child has long-lasting pain on their teeth or h=gums, have them seen at your local health
+                    center</li>
+                <li>Avoid saliva sharing behaviors such as sharing a spoon, softening or chewing the baby's food in your
+                    mouth or tasting
+                    the baby's food with the baby's spoon
+                </li>
+                <br><br>
+            </ul>
+        </ul>
+    </div>
+    <div class="footer">
+        <div class="links">
+            <hr>
+            <h3>Links</h3>
+            <hr>
+            <div class="link_list">
+                <a href="/Home_page.html">Home</a><br>
+                <a href="/HTML/About_us.html">About Us</a><br>
+                <a href="/HTML/Educational_info.html">Educational Information</a><br>
+                <a href="/HTML/contact_us.html">Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="timing">
+            <hr>
+            <h3>Timing</h3>
+            <hr>
+            Summer &#40 Mar to Oct &#41 &#58 <br>
+            9 &#58 00 AM &#45 5 &#58 00 PM <br><br>
+            Winter &#40 Nov to Feb &#41 &#58<br>
+            9 &#58 00 AM &#45 4 &#58 00 PM <br><br>
+            Office Days &#58<br>
+            Monday to Friday &#58 Open<br><br>
+
+
+
+        </div>
+        <div class="contact_us">
+            <hr>
+            <h3>Contact Us</h3>
+            <hr>
+            Email Address<br><br>
+            sample123@gmail.com <br><br>
+            Contact Us &#58
+            &#43 975-2-328095,<br>
+            32184, 32232
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

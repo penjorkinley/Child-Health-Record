@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" href="/CSS/about_us.css">
+</head>
+
+<body onload="initClock()">
+    <div class="header">
+        <div class="date_header">
+            <div class="date">
+                Date:&nbsp;
+                <span id="dayname">Day</span>,&nbsp;
+                <span id="daynum">00</span>
+                <span id="month">Month</span>,&nbsp;
+                <span id="year">Year</span>
+            </div>
+
+            <div class="time">
+                Time:&nbsp;
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            function updateClock() {
+
+                var now = new Date();
+                var dname = now.getDay(),
+                    mo = now.getMonth(),
+                    dnum = now.getDate(),
+                    yr = now.getFullYear(),
+                    hou = now.getHours(),
+                    min = now.getMinutes(),
+                    sec = now.getSeconds(),
+                    pe = "AM";
+
+                if (hou == 0) {
+                    hou = 12;
+                }
+                if (hou > 12) {
+                    hou = hou - 12;
+                    pe = "PM";
+                }
+
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+                var values = [week[dname], months[mo], dnum, yr, hou, min, sec, pe];
+
+                for (var i = 0; i < ids.length; i++) {
+                    document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+                }
+            }
+
+            function initClock() {
+                updateClock();
+                window.setInterval("updateClock()", 1)
+            }
+        </script>
+
+        <hr id="hr1">
+        <div class="nav_bar">
+
+            <div class="logo">
+                <a href="/Home_page.html" class="logo_link"> <img src="/Images/Logo.png" id="logo"></a>
+            </div>
+
+            <div class="nav_items">
+                <ul class="items">
+                    <li><a href="/Home_page.html">Home</a></li>
+                    <li><a href="/HTML/About_us.html">About Us</a></li>
+                    <li><a href="/HTML/Educational_info.html">Educational Information</a></li>
+                    <li><a href="/HTML/contact_us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="nav_button">
+                <ul class="button1">
+                    <li><a id="login_button" href="/HTML/login_page.html">Login</a></li>
+                    <li><a id="signup_button" href="/HTML/signup.html"> Sign Up</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="header2">
+
+        <div class="a_us_header">
+            About Us
+        </div>
+
+        <div class="header3">
+
+            <div class="home">
+                <div class="home_img">
+                    <img src="\icons\home.png">
+                </div>
+                <div class="home_link">
+                    <a href="/Home_page.html"> Home</a>
+                </div>
+            </div>
+
+
+            <div class="about_us">
+                <div class="about_us_img">
+                    <img src="/icons/double_ arrow.png">
+                </div>
+
+                <div class="about_us_link">
+                    <a href="About_us.html">About Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="paragraph">
+            <h1>Welcome</h1>
+            <p>It's true that a healthy child requires a healthy mother. A child cannot be healthy or happy unless his
+                or
+                her mother
+                is healthy and happy. Maternal health during pregnancy and after delivery is essential for a mother's
+                physical and
+                mental well-being, as well as her ability to provide loving, proper care to her newborn child at birth
+                and
+                in the
+                years after.</p>
+
+            <p>Since mothers play such a crucial role in their children's health and quality of life, it's critical to
+                prioritize maternal health during pregnancy. The majority of pregnant women concentrate on the growth
+                and wellbeing of their unborn child. Expectant moms should, however, have regular prenatal visits not
+                just to assure the health of their kid, but also to ensure their own health both during and after
+                pregnancy.
+            </p>
+
+            <p>Any current health hazards can be detected and steps made to prevent any continued health problems not
+                just
+                for
+                the kid but also for Mom during her pregnancy and prenatal care appointments.</p>
+        </div>
+
+        <div class="profile">
+            <h2>Whom To Contact During Pregnancy, Birth And Newborn Care</h2>
+
+            <div class="doctor1">
+                <div class="gp">
+                    <h3>General Practitioner</h3>
+                    <p>Name: Dr.Karma Thinley <br>
+                        Contact No: 17823809 <br>
+                        Email Address: sample123@gmail.com </p>
+                </div>
+
+                <div class="obstetrician">
+                    <h3>Obstetrician</h3>
+                    <p>Name: Dr.Pema Lhamo <br>
+                        Contact No: 17727180 <br>
+                        Email Address: sample123@gmail.com </p>
+                </div>
+
+                <div class="midwife">
+                    <h3>Midwife</h3>
+                    <p>Name: Nurse Leela Gurung <br>
+                        Contact No: 77091023 <br>
+                        Email Address: sample123@gmail.com </p>
+                </div>
+            </div>
+
+            <div class="doctor2">
+                <div class="doula">
+                    <h3>Doula</h3>
+                    <p>Name: Nurse Phuntsho Choden<br>
+                        Contact No: 77551099 <br>
+                        Email Address: sample123@gmail.com </p>
+                </div>
+
+                <div class="mch">
+                    <h3>Maternal And Child Health Nurse</h3>
+                    <p>Name: Nurse Lhamo <br>
+                        Contact No: 77091023 <br>
+                        Email Address: sample123@gmail.com </p>
+
+                </div>
+
+                <div class="sonographer">
+                    <h3>Sonographer</h3>
+                    <p>Name: Dr. Strange <br>
+                        Contact No: 17621301 <br>
+                        Email Address: sample123@gmail.com </p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="links">
+            <hr>
+            <h3>Links</h3>
+            <hr>
+            <div class="link_list">
+                <a href="/Home_page.html">Home</a><br>
+                <a href="/HTML/About_us.html">About Us</a><br>
+                <a href="/HTML/Educational_info.html">Educational Information</a><br>
+                <a href="/HTML/contact_us.html">Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="timing">
+            <hr>
+            <h3>Timing</h3>
+            <hr>
+            Summer &#40 Mar to Oct &#41 &#58 <br>
+            9 &#58 00 AM &#45 5 &#58 00 PM <br><br>
+            Winter &#40 Nov to Feb &#41 &#58<br>
+            9 &#58 00 AM &#45 4 &#58 00 PM <br><br>
+            Office Days &#58<br>
+            Monday to Friday &#58 Open<br><br>
+
+
+
+        </div>
+        <div class="contact_us">
+            <hr>
+            <h3>Contact Us</h3>
+            <hr>
+            Email Address<br><br>
+            sample123@gmail.com <br><br>
+            Contact Us &#58
+            &#43 975-2-328095,<br>
+            32184, 32232
+
+        </div>
+
+    </div>
+    </div>
+</body>
+
+</html>

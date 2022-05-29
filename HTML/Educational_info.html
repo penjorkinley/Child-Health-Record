@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Educational Information</title>
+    <link rel="stylesheet" href="/CSS/edu_info.css">
+</head>
+
+<body onload="initClock()">
+    <div class="header">
+        <div class="date_header">
+            <div class="date">
+                Date:&nbsp;
+                <span id="dayname">Day</span>,&nbsp;
+                <span id="daynum">00</span>
+                <span id="month">Month</span>,&nbsp;
+                <span id="year">Year</span>
+            </div>
+
+            <div class="time">
+                Time:&nbsp;
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            function updateClock() {
+
+                var now = new Date();
+                var dname = now.getDay(),
+                    mo = now.getMonth(),
+                    dnum = now.getDate(),
+                    yr = now.getFullYear(),
+                    hou = now.getHours(),
+                    min = now.getMinutes(),
+                    sec = now.getSeconds(),
+                    pe = "AM";
+
+                if (hou == 0) {
+                    hou = 12;
+                }
+                if (hou > 12) {
+                    hou = hou - 12;
+                    pe = "PM";
+                }
+
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+                var values = [week[dname], months[mo], dnum, yr, hou, min, sec, pe];
+
+                for (var i = 0; i < ids.length; i++) {
+                    document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+                }
+            }
+
+            function initClock() {
+                updateClock();
+                window.setInterval("updateClock()", 1)
+            }
+        </script>
+
+        <hr id="hr1">
+        <div class="nav_bar">
+
+            <div class="logo">
+                <a href="/Home_page.html" class="logo_link"> <img src="/Images/Logo.png" id="logo"></a>
+            </div>
+
+            <div class="nav_items">
+                <ul class="items">
+                    <li><a href="/Home_page.html">Home</a></li>
+                    <li><a href="/HTML/About_us.html">About Us</a></li>
+                    <li><a href="/HTML/Educational_info.html">Educational Information</a></li>
+                    <li><a href="/HTML/contact_us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="nav_button">
+                <ul class="button1">
+                    <li><a id="login_button" href="/HTML/login_page.html">Login</a></li>
+                    <li><a id="signup_button" href="/HTML/signup.html"> Sign Up</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="header2">
+
+        <div class="e_info">
+            Educational Information
+        </div>
+
+        <div class="header3">
+
+            <div class="home">
+                <div class="home_img">
+                    <img src="\icons\home.png">
+                </div>
+                <div class="home_link">
+                    <a href="/Home_page.html"> Home</a>
+                </div>
+            </div>
+
+
+            <div class="education_info">
+                <div class="education_info_img">
+                    <img src="/icons/double_ arrow.png">
+                </div>
+
+                <div class="education_link">
+                    <a href="/HTML/Educational_info.html">Educational Information</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="button1">
+        <div class="key_info">
+            <div class="key_icon">
+                <img src="/icons/key_info.png">
+            </div>
+            <div class="key_info_link">
+                <a href="/HTML/key_info.html">Key Information For <br> Infant <br> And Child Safety</a>
+            </div>
+        </div>
+
+        <div class="dental_care">
+            <div class="dental_care_icon">
+                <img src="/icons/dental.png">
+            </div>
+            <div class="d_care_link">
+                <a href="/HTML/dental_care.html"> Dental Care For <br> Children</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="button2">
+        <div class="bf_tips">
+            <div class="bf_tips_icon">
+                <img src="/icons/milk_bottle.png">
+            </div>
+            <div class="bf_tips_link">
+                <a href="breastfeeding_tips.html"> Breastfeeding Tips</a>
+            </div>
+        </div>
+
+        <div class="care_for_nb">
+            <div class="care_for_nb_icon">
+                <img src="/icons/care.png">
+            </div>
+            <div class="nb_link">
+                <a href="/HTML/Caring_for_newborn.html">Caring For New <br> Newborn Baby</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="links">
+            <hr>
+            <h3>Links</h3>
+            <hr>
+            <div class="link_list">
+                <a href="/Home_page.html">Home</a><br>
+                <a href="/HTML/About_us.html">About Us</a><br>
+                <a href="/HTML/Educational_info.html">Educational Information</a><br>
+                <a href="/HTML/contact_us.html">Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="timing">
+            <hr>
+            <h3>Timing</h3>
+            <hr>
+            Summer &#40 Mar to Oct &#41 &#58 <br>
+            9 &#58 00 AM &#45 5 &#58 00 PM <br><br>
+            Winter &#40 Nov to Feb &#41 &#58<br>
+            9 &#58 00 AM &#45 4 &#58 00 PM <br><br>
+            Office Days &#58<br>
+            Monday to Friday &#58 Open<br><br>
+
+
+
+        </div>
+        <div class="contact_us">
+            <hr>
+            <h3>Contact Us</h3>
+            <hr>
+            Email Address<br><br>
+            sample123@gmail.com <br><br>
+            Contact Us &#58
+            &#43 975-2-328095,<br>
+            32184, 32232
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

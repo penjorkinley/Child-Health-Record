@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="/CSS/signup.css">
+
+</head>
+
+<body onload="initClock()">
+    <div class="header">
+        <div class="date_header">
+            <div class="date">
+                Date:&nbsp;
+                <span id="dayname">Day</span>,&nbsp;
+                <span id="daynum">00</span>
+                <span id="month">Month</span>,&nbsp;
+                <span id="year">Year</span>
+            </div>
+
+            <div class="time">
+                Time:&nbsp;
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            function updateClock() {
+
+                var now = new Date();
+                var dname = now.getDay(),
+                    mo = now.getMonth(),
+                    dnum = now.getDate(),
+                    yr = now.getFullYear(),
+                    hou = now.getHours(),
+                    min = now.getMinutes(),
+                    sec = now.getSeconds(),
+                    pe = "AM";
+
+                if (hou == 0) {
+                    hou = 12;
+                }
+                if (hou > 12) {
+                    hou = hou - 12;
+                    pe = "PM";
+                }
+
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+                var values = [week[dname], months[mo], dnum, yr, hou, min, sec, pe];
+
+                for (var i = 0; i < ids.length; i++) {
+                    document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+                }
+            }
+
+            function initClock() {
+                updateClock();
+                window.setInterval("updateClock()", 1)
+            }
+        </script>
+
+        <hr id="hr1">
+        <div class="nav_bar">
+
+            <div class="logo">
+                <a href="Home_page.html" class="logo_link"> <img src="/Images/Logo.png" id="logo"></a>
+            </div>
+
+            <div class="nav_items">
+                <ul class="items">
+                    <li><a href="/Home_page.html">Home</a></li>
+                    <li><a href="/HTML/About_us.html">About Us</a></li>
+                    <li><a href="/HTML/Educational_info.html">Educational Information</a></li>
+                    <li><a href="/HTML/contact_us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="nav_button">
+                <ul class="button1">
+                    <li><a id="login_button" href="/HTML/login_page.html">Login</a></li>
+                    <li><a id="signup_button" href="/HTML/signup.html"> Sign Up</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="form">
+            <form id="signup_form">
+                <div class="title">
+                    <b>Create Your Account</b>
+                </div>
+                <div class="name">
+                    Name:
+                    <div class="n_input">
+                        <div class="name_input">
+                            <input type="text" placeholder="First Name" id="Fname" required>
+                        </div>
+
+                        <div class="name_input">
+                            <input type="text" placeholder="Middle Name" id="Mname">
+                        </div>
+
+                        <div class="name_input">
+                            <input type="text" placeholder="Last Name" id="Lname">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cid_no">
+                    Citizen Identity Card No (CID NO):
+                    <div class="cid_input">
+                        <input type="text" placeholder="Enter CID Number" id="cid_no" required>
+                    </div>
+                </div>
+
+                <div class="dob_gender">
+                    <div class="label">
+                        <div class="dob_label">
+                            Date Of Birth:
+                        </div>
+                        <div class="gender_label">
+                            Gender:
+                        </div>
+                    </div>
+
+                    <div class="dob_input">
+                        <div class="date">
+                            <input type="number" min="1" max="31" placeholder="Date" id="sign_date" required>
+                        </div>
+
+                        <div class="month">
+                            <select id="sign_month" required>
+                                <option></option>
+                                <option value="January"> January</option>
+                                <option value="February"> February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+
+                            </select>
+                        </div>
+
+                        <div class="year">
+                            <input type="text" placeholder="Year" id="sign_year" required>
+                        </div>
+                        <div class="gender_input">
+                            <select id="gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="email">
+                    Email Address:
+                    <div>
+                        <input type="email" placeholder="Enter your email address" id="email">
+                    </div>
+                </div>
+
+                <div class="mobile_no">
+                    Mobile Number:
+                    <div>
+                        <input type="tel" placeholder="Enter your Phone Number" id="number">
+                    </div>
+                </div>
+
+                <div class="password">
+                    <div class="password1">
+                        Password
+                        <div>
+                            <input type="password" placeholder="Enter your password" id="pword" required>
+                        </div>
+                    </div>
+                    <div class="password2">
+                        Confirm Password
+                        <div>
+                            <input type="password" placeholder="Confirm your password" id="confirm_pw" required>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="submit">
+                    <input type="submit" id="submit_button" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="/JavaScript/signup_db.js"></script>
+
+
+</body>
+
+</html>

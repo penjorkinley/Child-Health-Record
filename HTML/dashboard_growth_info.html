@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard/Growth Check-Up Record</title>
+    <link rel="stylesheet" href="/CSS/dashboard_growth_info.css">
+</head>
+
+<body onload="initClock()">
+    <div class="header">
+        <div class="date_header">
+            <div class="date">
+                Date:&nbsp;
+                <span id="dayname">Day</span>,&nbsp;
+                <span id="daynum">00</span>
+                <span id="month">Month</span>,&nbsp;
+                <span id="year">Year</span>
+            </div>
+
+            <div class="time">
+                Time:&nbsp;
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            function updateClock() {
+
+                var now = new Date();
+                var dname = now.getDay(),
+                    mo = now.getMonth(),
+                    dnum = now.getDate(),
+                    yr = now.getFullYear(),
+                    hou = now.getHours(),
+                    min = now.getMinutes(),
+                    sec = now.getSeconds(),
+                    pe = "AM";
+
+                if (hou == 0) {
+                    hou = 12;
+                }
+                if (hou > 12) {
+                    hou = hou - 12;
+                    pe = "PM";
+                }
+
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+                var values = [week[dname], months[mo], dnum, yr, hou, min, sec, pe];
+
+                for (var i = 0; i < ids.length; i++) {
+                    document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+                }
+            }
+
+            function initClock() {
+                updateClock();
+                window.setInterval("updateClock()", 1)
+            }
+        </script>
+
+        <hr id="hr1">
+        <div class="nav_bar">
+
+            <div class="logo">
+                <a href="/Home_page.html" class="logo_link"> <img src="/Images/Logo.png" id="logo"></a>
+            </div>
+
+            <div class="nav_items">
+                <ul class="items">
+                    <li><a href="/Home_page.html">Home</a></li>
+                    <li><a href="/HTML/About_us.html">About Us</a></li>
+                    <li><a href="/HTML/Educational_info.html">Educational Information</a></li>
+                    <li><a href="/HTML/contact_us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="logout_button">
+                <a id="logout_button" href="/Home_page.html">Log Out</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="header2">
+
+        <div class="dashboard_header">
+            Dashboard
+        </div>
+
+        <div class="header3">
+            <div class="menu">
+                <a href="/HTML/dashboard_menu.html">Menu</a>
+            </div>
+
+            <div class="parent_info">
+                <a href="/HTML/dashboard_parent_info.html">Parent's Info</a>
+            </div>
+
+            <div class="child_info">
+                <a href="/HTML/dashboard_child_info.html">Child's Info</a>
+            </div>
+
+            <div class="immunization_info">
+                <a href="/HTML/dashboard_immunization_info.html">Immunization Record</a>
+            </div>
+
+            <div class="growth_info active">
+                <a href="/HTML/dashboard_growth_info.html">Growth Check-Up Record</a>
+            </div>
+        </div>
+    </div>
+
+
+    <form id="growth_form">
+        <div class="header4">
+            <div class="grow_info">
+                <h2>Growth Check-Up Info</h2>
+            </div>
+            <div class="cancel">
+                <a href=""><b>Cancel</b> </a>
+            </div>
+        
+            <div class="save">
+                <input type="submit" id="save" value="Save">
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="graph_content">
+                <div class="girl">
+                    <img src="/Images/graph_girl.png" alt="">
+                </div>
+                <div class="boy">
+                    <img src="/Images/graph_boy.png" alt="">
+                </div>
+            </div>
+        
+            <table class="table">
+                <caption><br></caption>
+                <thead>
+                    <tr>
+                        <th style="width: 80%;">Month/Year<br><br></th>
+                        <th>Height/Length<br>(cm)</th>
+                        <th>Weight<br>(Grams)</th>
+                        <th style="width: 110%;">Remarks<br><br></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="month1">
+                        <td>&nbsp;1 (month)</td>
+                        <td>&nbsp; <input type="number" id="m_height"></td>
+                        <td>&nbsp;<input type="number" id="m_weight"></td>
+                        <td>&nbsp;<input type="text" id="m_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;2 (months)</td>
+                        <td>&nbsp;<input type="number" id="m2_height"></td>
+                        <td>&nbsp;<input type="number" id="m2_weight"></td>
+                        <td>&nbsp;<input type="text" id="m2_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;3 (months)</td>
+                        <td>&nbsp;<input type="number" id="m3_height"></td>
+                        <td>&nbsp;<input type="number" id="m3_weight"></td>
+                        <td>&nbsp;<input type="text" id="m3_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;4 (months)</td>
+                        <td>&nbsp;<input type="number" id="m4_height"></td>
+                        <td>&nbsp;<input type="number" id="m4_weight"></td>
+                        <td>&nbsp;<input type="text" id="m4_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;5 (months)</td>
+                        <td>&nbsp;<input type="number" id="m5_height"></td>
+                        <td>&nbsp;<input type="number" id="m5_weight"></td>
+                        <td>&nbsp;<input type="text" id="m5_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;6 (months)</td>
+                        <td>&nbsp;<input type="number" id="m6_height"></td>
+                        <td>&nbsp;<input type="number" id="m6_weight"></td>
+                        <td>&nbsp;<input type="text" id="m6_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;7 (months)</td>
+                        <td>&nbsp;<input type="number" id="m7_height"></td>
+                        <td>&nbsp;<input type="number" id="m7_weight"></td>
+                        <td>&nbsp;<input type="text" id="m7_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;8 (months)</td>
+                        <td>&nbsp;<input type="number" id="m8_height"></td>
+                        <td>&nbsp;<input type="number" id="m8_weight"></td>
+                        <td>&nbsp;<input type="text" id="m8_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;9 (months)</td>
+                        <td>&nbsp;<input type="number" id="m9_height"></td>
+                        <td>&nbsp;<input type="number" id="m9_weight"></td>
+                        <td>&nbsp;<input type="text" id="m9_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>10 (months)</td>
+                        <td>&nbsp;<input type="number" id="m10_height"></td>
+                        <td>&nbsp;<input type="number" id="m10_weight"></td>
+                        <td>&nbsp;<input type="text" id="m10_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>11 (months)</td>
+                        <td>&nbsp;<input type="number" id="m11_height"></td>
+                        <td>&nbsp;<input type="number" id="m11_weight"></td>
+                        <td>&nbsp;<input type="text" id="m11_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>12 (months)</td>
+                        <td>&nbsp;<input type="number" id="m12_height"></td>
+                        <td>&nbsp;<input type="number" id="m12_weight"></td>
+                        <td>&nbsp;<input type="text" id="m12_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>15 months (1 year &amp; 3 months)</td>
+                        <td>&nbsp;<input type="number" id="m15_height"></td>
+                        <td>&nbsp;<input type="number" id="m15_weight"></td>
+                        <td>&nbsp;<input type="text" id="m15_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>18 months (1 year &amp; 6 months)</td>
+                        <td>&nbsp;<input type="number" id="m18_height"></td>
+                        <td>&nbsp;<input type="number" id="m18_weight"></td>
+                        <td>&nbsp;<input type="text" id="m18_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>21 months (1 year &amp; 9 months)</td>
+                        <td>&nbsp;<input type="number" id="m21_height"></td>
+                        <td>&nbsp;<input type="number" id="m21_weight"></td>
+                        <td>&nbsp;<input type="text" id="m21_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>24 months(2 years)</td>
+                        <td>&nbsp;<input type="number" id="m24_height"></td>
+                        <td>&nbsp;<input type="number" id="m24_weight"></td>
+                        <td>&nbsp;<input type="text" id="m24_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>27 months (2 years &amp; 3 months)</td>
+                        <td>&nbsp;<input type="number" id="m27_height"></td>
+                        <td>&nbsp;<input type="number" id="m27_weight"></td>
+                        <td>&nbsp;<input type="text" id="m27_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>30 months (2 years &amp; 6 months)</td>
+                        <td>&nbsp;<input type="number" id="m30_height"></td>
+                        <td>&nbsp;<input type="number" id="m30_weight"></td>
+                        <td>&nbsp;<input type="text" id="m30_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>33 months (2 years &amp; 9 months)</td>
+                        <td>&nbsp;<input type="number" id="m33_height"></td>
+                        <td>&nbsp;<input type="number" id="m33_weight"></td>
+                        <td>&nbsp;<input type="text" id="m33_remark"></td>
+                    </tr>
+                    <tr>
+                        <td>36 months (3 years)</td>
+                        <td>&nbsp;<input type="number" id="m36_height"></td>
+                        <td>&nbsp;<input type="number" id="m36_weight"></td>
+                        <td>&nbsp;<input type="text" id="m36_remark"></td>
+                    </tr>
+                 
+                <tbody>
+            </table>
+        </div>
+    </form>
+   
+    <div class="footer">
+        <div class="links">
+            <hr>
+            <h3>Links</h3>
+            <hr>
+            <div class="link_list">
+                <a href="/Home_page.html">Home</a><br>
+                <a href="/HTML/About_us.html">About Us</a><br>
+                <a href="/HTML/Educational_info.html">Educational Information</a><br>
+                <a href="/HTML/contact_us.html">Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="timing">
+            <hr>
+            <h3>Timing</h3>
+            <hr>
+            Summer &#40 Mar to Oct &#41 &#58 <br>
+            9 &#58 00 AM &#45 5 &#58 00 PM <br><br>
+            Winter &#40 Nov to Feb &#41 &#58<br>
+            9 &#58 00 AM &#45 4 &#58 00 PM <br><br>
+            Office Days &#58<br>
+            Monday to Friday &#58 Open<br><br>
+
+
+
+        </div>
+        <div class="contact_us">
+            <hr>
+            <h3>Contact Us</h3>
+            <hr>
+            Email Address<br><br>
+            sample123@gmail.com <br><br>
+            Contact Us &#58
+            &#43 975-2-328095,<br>
+            32184, 32232
+
+        </div>
+
+    </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="/JavaScript/growth_info_db.js"></script>
+</body>
+
+</html>

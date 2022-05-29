@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Child Health Record Home Page</title>
+    <link rel="stylesheet" href="CSS\Home_page.css">
+</head>
+
+<body onload="initClock()">
+    <div class="header">
+        <div class="date_header">
+            <div class="date">
+                Date:&nbsp;
+                <span id="dayname">Day</span>,&nbsp;
+                <span id="daynum">00</span>
+                <span id="month">Month</span>,&nbsp;
+                <span id="year">Year</span>
+            </div>
+
+            <div class="time">
+                Time:&nbsp;
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            function updateClock() {
+
+                var now = new Date();
+                var dname = now.getDay(),
+                    mo = now.getMonth(),
+                    dnum = now.getDate(),
+                    yr = now.getFullYear(),
+                    hou = now.getHours(),
+                    min = now.getMinutes(),
+                    sec = now.getSeconds(),
+                    pe = "AM";
+
+                if (hou == 0) {
+                    hou = 12;
+                }
+                if (hou > 12) {
+                    hou = hou - 12;
+                    pe = "PM";
+                }
+
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+                var values = [week[dname], months[mo], dnum, yr, hou, min, sec, pe];
+
+                for (var i = 0; i < ids.length; i++) {
+                    document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+                }
+            }
+
+            function initClock() {
+                updateClock();
+                window.setInterval("updateClock()", 1)
+            }
+        </script>
+
+        <hr id="hr1">
+        <div class="nav_bar">
+
+            <div class="logo">
+                <a href="Home_page.html" class="logo_link"> <img src="Images/Logo.png" id="logo"></a>
+            </div>
+
+            <div class="nav_items">
+                <ul class="items">
+                    <li><a href="Home_page.html">Home</a></li>
+                    <li><a href="/HTML/About_us.html">About Us</a></li>
+                    <li><a href="/HTML/Educational_info.html">Educational Information</a></li>
+                    <li><a href="/HTML/contact_us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="nav_button">
+                <ul class="button1">
+                    <li><a id="login_button" href="/HTML/login_page.html">Login</a></li>
+                    <li><a id="signup_button" href="/HTML/signup.html"> Sign Up</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="home_pic">
+        <div class="title">
+            Your Child Health Care<br>
+            Record
+        </div>
+    </div>
+
+    <div class="button2">
+        <div class="p_info">
+            <div class="p_icon">
+                <img src="icons/parents.png">
+            </div>
+            <div class="parent">
+                <a href="/HTML/dashboard_parent_info.html">Parent's Information</a>
+            </div>
+        </div>
+
+        <div class="c_info">
+            <div class="c_icon">
+                <img src="icons/child.png">
+            </div>
+            <div class="child">
+                <a href="/HTML/dashboard_child_info.html"> Child's Information</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="button3">
+        <div class="immunization">
+            <div class="immu_icon">
+                <img src="icons/Immunization.png">
+            </div>
+            <div class="immu">
+                <a href="/HTML/dashboard_immunization_info.html"> Immunization Records</a>
+            </div>
+        </div>
+
+        <div class="growth">
+            <div class="grow">
+                <div class="grow_icon">
+                    <img src="icons/growth.png">
+                </div>
+                <a href="/HTML/dashboard_growth_info.html">Growth Records</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <hr id="hr2">
+
+        <div class="vision" style="text-align:center;">
+            <h1>Vision</h1>
+            <p>A secure, convenient and  user-friendly digitalized health record that can help parents and doctors to monitor the child's health efficiently.</p>
+        </div>
+        <div class="mission" style="text-align: center;">
+            <h1>Mission</h1>
+            
+            <p>To serve as user-friendly e-health book record with secured and portable child health record. <br>
+            To keep the records of child/children's timely immunization and monthly measurement of weight and height. <br>
+            To provide the parents and doctors with the information about the child's health and growth. <br>
+            To step towards the development of the child's health and growth. <br>
+            To move forward with the digitalization of the world <br>
+            </p>
+        </div>
+
+        <hr id="hr3">
+    </div>
+
+    <div class="footer">
+        <div class="links">
+            <hr>
+            <h3>Links</h3>
+            <hr>
+            <div class="link_list">
+                <a href="Home_page.html">Home</a><br>
+                <a href="/HTML/About_us.html">About Us</a><br>
+                <a href="/HTML/Educational_info.html">Educational Information</a><br>
+                <a href="/HTML/contact_us.html">Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="timing">
+            <hr>
+            <h3>Timing</h3>
+            <hr>
+            Summer &#40 Mar to Oct &#41 &#58 <br>
+            9 &#58 00 AM &#45 5 &#58 00 PM <br><br>
+            Winter &#40 Nov to Feb &#41 &#58<br>
+            9 &#58 00 AM &#45 4 &#58 00 PM <br><br>
+            Office Days &#58<br>
+            Monday to Friday &#58 Open<br><br>
+
+
+
+        </div>
+        <div class="contact_us">
+            <hr>
+            <h3>Contact Us</h3>
+            <hr>
+            Email Address<br><br>
+            sample123@gmail.com <br><br>
+            Contact Us &#58
+            &#43 975-2-328095,<br>
+            32184, 32232
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
